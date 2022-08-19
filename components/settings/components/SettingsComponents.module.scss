@@ -1,0 +1,149 @@
+.ItemIncrementor {
+    display: flex;
+    align-items: center;
+
+    .plus,
+    .minus {
+        cursor: pointer;
+        margin: 0 0.5rem;
+    }
+}
+
+.plus {
+    svg {
+        color: green;
+    }
+    &:disabled {
+        svg {
+            color: gray;
+        }
+    }
+}
+.minus {
+    svg {
+        color: var(--error);
+    }
+    &:disabled {
+        svg {
+            color: gray;
+        }
+    }
+}
+
+.DescriptionInputs,
+.BulletInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.PriceInputRender,
+.TestimonialInputRender {
+    .priceInputs,
+    .testimonialInputs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+        align-items: flex-end;
+
+        .serviceFormSection,
+        .postFormSection {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .serviceSectionHeader,
+            .postSectionHeader {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1rem;
+
+                svg {
+                    margin-left: 0.5rem;
+                    cursor: pointer;
+                }
+
+                .edit {
+                    color: #585858;
+                }
+                .delete {
+                    color: var(--error);
+                }
+            }
+
+            .priceFieldBlock,
+            .postFieldBlock {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        .priceInputs,
+        .testimonialInputs {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.FormButtons {
+    button {
+        margin-right: 1rem;
+        width: 6rem;
+    }
+}
+
+.ImageDisplayBlock {
+    grid-template-columns: repeat(3, 1fr) !important;
+
+    .delete {
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--error);
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+
+    @media screen and (min-width: 751px) and (max-width: 1000px) {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    @media screen and (min-width: 1001px) and (max-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    @media screen and (min-width: 1201px) {
+        grid-template-columns: repeat(5, 1fr) !important;
+    }
+}
+
+.carouselUpload {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+
+    input {
+        display: none;
+    }
+
+    label {
+        pointer-events: none;
+        width: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+            pointer-events: all;
+        }
+    }
+}

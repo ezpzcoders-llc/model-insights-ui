@@ -1,0 +1,6 @@
+export const LANDING = 'landing'
+export const ABOUT = 'about'
+export const PRICING = 'pricing'
+export const TESTIMONIALS = 'testimonials'
+export const CONTACT = 'contact'
+export const BOOK = 'bookings'

@@ -1,0 +1,293 @@
+.PageLayout {
+    .NavBar {
+        position: sticky;
+        height: 20rem;
+        top: 25vh;
+
+        .navWrapper {
+            border-right: 1px solid var(--primary-accent);
+            padding: 2rem 0;
+        }
+
+        ul {
+            padding: 0 1rem 0 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70%;
+            margin: auto;
+            margin-right: 3.5rem;
+
+            li {
+                margin: 1.8rem 0;
+                font-weight: 500;
+                text-align: right;
+                width: 100%;
+                font-size: 1rem;
+                color: #605b5b;
+                cursor: pointer;
+                color: var(--primary-accent);
+
+                &.activeLink,
+                &:hover {
+                    text-decoration: underline;
+                    text-decoration-thickness: 15%;
+                }
+
+                a,
+                u {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .authButtons {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 3rem;
+    }
+
+    .MobileNavBar {
+        display: none;
+        grid-template-columns: 6rem 3.5rem;
+        grid-template-rows: 4rem;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.85);
+
+        :global(.logo) {
+            height: 3rem;
+            width: 3rem;
+            margin: 0 auto;
+        }
+    }
+
+    main {
+        position: static;
+        overflow: visible;
+        width: 100%;
+        height: 100%;
+        float: none;
+        clear: none;
+        background-color: white;
+        color: black;
+    }
+
+    @media screen and (max-width: 750px) {
+        .NavBar {
+            display: none;
+        }
+
+        .MobileNavBar {
+            display: grid;
+            grid-template-columns: 12rem 3.5rem;
+        }
+    }
+}
+
+.MobileNavMenu {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 80vh 4rem;
+
+    ul {
+        height: 100%;
+        margin-top: 2rem;
+
+        li {
+            color: #e8e3d9;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+
+    .authButtons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.MobileNavMenuDrawer {
+    height: calc(100% - 4rem);
+    margin-top: 4rem;
+
+    :global(.MuiDrawer-paper) {
+        height: calc(100% - 4rem);
+        width: 100%;
+        margin-top: 4rem;
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+}
+
+.SettingsDrawer {
+    :global(.MuiDrawer-paper) {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.Footer {
+    background-color: var(--footer-bg);
+    height: 13rem;
+    padding: 2rem 7.143rem;
+    margin-top: 7.143rem;
+
+    .layout {
+        display: grid;
+        grid-template-columns: 0.75fr 1fr;
+        grid-gap: 1rem;
+
+        .footerLeft {
+            display: flex;
+            justify-content: flex-start;
+
+            span {
+                font-size: 0.8rem;
+                font-style: italic;
+                color: #484848;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+            }
+
+            :global(.logo) {
+                height: unset;
+                width: unset;
+                margin: 0;
+
+                img {
+                    height: 5rem;
+                }
+            }
+        }
+        .footerRight {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            h2 {
+                font-weight: bold;
+                font-size: 1.1rem;
+            }
+            .contact {
+                display: grid;
+                grid-template-rows: 2rem 1.5rem 1.5rem;
+                grid-gap: 0.5rem;
+
+                .contactItem {
+                    width: 100%;
+                    font-size: 0.9rem;
+                    margin-left: 0.1rem;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+
+                        &:hover {
+                            color: var(--primary-accent);
+                        }
+
+                        svg {
+                            margin-right: 0.5rem;
+                        }
+                    }
+                }
+            }
+
+            .newsletter {
+                display: grid;
+                grid-template-rows: 1rem 3rem 1fr;
+                grid-gap: 0.5rem;
+
+                :global(.MuiOutlinedInput-root) {
+                    background-color: white;
+                }
+
+                span {
+                    font-size: 0.9rem;
+                    display: flex;
+                    align-items: center;
+
+                    svg {
+                        margin-right: 0.5rem;
+                    }
+                }
+
+                input {
+                    background-color: white;
+                }
+
+                // .footerSearchIcon {
+                //     color: var(--primary-accent);
+                //     cursor: pointer;
+                // }
+                .subscribeBtn {
+                    height: 2.5rem;
+                    position: relative;
+                    left: 1rem;
+                    width: 7.143rem;
+                    text-transform: none;
+                    font-weight: 700;
+                    font-size: 1rem;
+                    background-color: var(--primary-accent);
+                }
+            }
+        }
+    }
+
+    :global(.ant-alert) {
+        position: fixed;
+        bottom: 8rem;
+        right: 1rem;
+    }
+
+    .copyright {
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 1100px) {
+        height: 30vh;
+
+        .layout {
+            .footerRight {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        height: 100%;
+        padding: 1rem;
+        margin-top: 2rem;
+
+        .layout {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            margin-top: 1rem;
+
+            .footerRight {
+                grid-template-columns: 1fr;
+                grid-gap: 2rem;
+            }
+
+            .footerLeft {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+
+                :global(.logo) {
+                    img {
+                        height: 4rem;
+                    }
+                }
+            }
+        }
+    }
+}

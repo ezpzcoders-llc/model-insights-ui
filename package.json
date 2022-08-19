@@ -1,0 +1,35 @@
+{
+    "name": "yerrrr",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@apollo/client": "^3.4.9",
+        "@emotion/react": "^11.5.0",
+        "@emotion/styled": "^11.3.0",
+        "@material-ui/lab": "^4.0.0-alpha.60",
+        "@mui/icons-material": "^5.0.4",
+        "@mui/lab": "^5.0.0-alpha.52",
+        "@mui/material": "^5.0.5",
+        "@mui/styles": "^5.1.0",
+        "axios": "^0.22.0",
+        "graphql": "^15.5.1",
+        "jwt-decode": "^3.1.2",
+        "next": "^12.0.1",
+        "react": "17.0.2",
+        "react-calendly": "^2.2.2",
+        "react-dom": "17.0.2",
+        "react-material-ui-carousel": "^3.0.4",
+        "react-scroll": "^1.8.4",
+        "sass": "^1.38.1"
+    },
+    "devDependencies": {
+        "eslint": "7.32.0",
+        "eslint-config-next": "11.1.0"
+    }
+}

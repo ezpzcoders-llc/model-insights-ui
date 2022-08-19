@@ -1,0 +1,171 @@
+.Settings {
+    padding: 1rem;
+    height: 100%;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        z-index: 50;
+        width: calc(100vw - 0.5rem);
+        padding: 0.5rem 1rem;
+        background-color: #fff;
+
+        h2 {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        svg {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+    }
+
+    .settingsBody {
+        margin-top: 3rem;
+
+        .UpdateLanding {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+                p {
+                    margin-top: 0;
+                }
+
+                .uploadRow {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    .uploadedImage {
+                        position: relative;
+
+                        img {
+                            height: 10rem;
+                            display: block;
+                        }
+                    }
+                    :global(.MuiIconButton-root) {
+                        margin-left: 1rem;
+                        color: tomato;
+
+                        &:disabled {
+                            color: lightgray;
+                        }
+                    }
+                    input {
+                        display: none;
+                    }
+                }
+
+                .description {
+                    .textarea {
+                        width: 100%;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 750px) {
+                .content {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto auto;
+                    grid-gap: 1rem;
+                }
+            }
+        }
+
+        .UpdateAbout {
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                .formContent {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 1rem;
+
+                    .description {
+                        display: grid;
+                        grid-template-rows: 6rem 1fr;
+                    }
+
+                    .bullets {
+                        display: grid;
+                        grid-template-rows: 6rem 1fr;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 750px) {
+                form {
+                    .formContent {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 0.5fr 0.5fr;
+
+                        .description {
+                            grid-template-rows: auto 1fr;
+                            grid-gap: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .UpdatePricing {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 1rem;
+
+            .pricingDescription {
+                div {
+                    width: 100%;
+                }
+
+                button {
+                    margin-top: 1rem;
+                }
+            }
+
+            .pricingInfo {
+                p > a {
+                    color: var(--primary-accent);
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .NewsLetter {
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                .subjectLine {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .emailBody {
+                }
+            }
+        }
+    }
+}
+
+.incrementWrapper {
+    display: flex;
+    align-items: center;
+}

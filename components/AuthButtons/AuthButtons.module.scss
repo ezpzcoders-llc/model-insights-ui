@@ -1,0 +1,17 @@
+.AuthButtons {
+    position: fixed;
+    right: 3rem;
+    bottom: 2rem;
+
+    button {
+        background-color: var(--primary-accent);
+
+        &:hover {
+            background-color: var(--primary-accent);
+        }
+    }
+
+    .actionItem {
+        color: white;
+    }
+}

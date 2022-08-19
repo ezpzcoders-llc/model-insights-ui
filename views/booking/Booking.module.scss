@@ -1,0 +1,12 @@
+.Bookings {
+    .BookingsContainer {
+        padding-left: 15rem;
+    }
+
+    @media screen and (max-width: 890px) {
+        .BookingsContainer {
+            padding-left: 0;
+            padding-top: 10rem;
+        }
+    }
+}
