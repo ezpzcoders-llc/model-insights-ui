@@ -22,7 +22,7 @@ const Landing = () => {
     useQuery(FETCH_LANDING_IMG, {
         onCompleted(data) {
             setLanding({
-                image: `https://res.cloudinary.com/parfuso-llc/${data.getLanding[0]?.publicId}`,
+                image: `https://res.cloudinary.com/ezpzcoding-cloudinary/${data.getLanding[0]?.publicId}`,
                 description: data.getLanding[0]?.description
             })
         },
@@ -32,7 +32,7 @@ const Landing = () => {
     })
 
     const fallback =
-        'https://res.cloudinary.com/parfuso-llc/model_insights/landing_page/mi_landing_img_2021-12-30T01_14_10_fp9qgg'
+        'https://res.cloudinary.com/ezpzcoding-cloudinary/model_insights/landing_page/mi_landing_img_2021-12-30T01_14_10_fp9qgg'
 
     let imgSrc = fallback
     if (data?.image) {

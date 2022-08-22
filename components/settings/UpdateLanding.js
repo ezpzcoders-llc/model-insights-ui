@@ -58,7 +58,7 @@ const UpdateLanding = () => {
                 type: 'success'
             })
             setLoading(false)
-            const imgFullPath = `https://res.cloudinary.com/parfuso-llc/${updatedLandingImg?.editLandingImage?.publicId}`
+            const imgFullPath = `https://res.cloudinary.com/ezpzcoding-cloudinary/${updatedLandingImg?.editLandingImage?.publicId}`
             setLanding({ ...data, image: imgFullPath })
         },
         onError(err) {
@@ -86,7 +86,7 @@ const UpdateLanding = () => {
         setLoading(true)
         try {
             const url =
-                'https://api.cloudinary.com/v1_1/parfuso-llc/image/upload'
+                'https://api.cloudinary.com/v1_1/ezpzcoding-cloudinary/image/upload'
             const form = new FormData()
             form.append('file', image)
             form.append(

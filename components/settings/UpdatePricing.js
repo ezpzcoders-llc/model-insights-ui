@@ -72,7 +72,8 @@ const UpdatePricing = () => {
     }, [uploadingCount, images, submitUploadedImages])
 
     const uploadImgToCloud = async data => {
-        const url = 'https://api.cloudinary.com/v1_1/parfuso-llc/image/upload'
+        const url =
+            'https://api.cloudinary.com/v1_1/ezpzcoding-cloudinary/image/upload'
         const form = new FormData()
         form.append('file', data)
         form.append(

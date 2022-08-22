@@ -13,9 +13,11 @@ const About = () => {
 
     useQuery(FETCH_ABOUT_PAGE, {
         onCompleted(data) {
-            const { description: newDesc, bulletPoints: newBullets } =
-                data.getAbout[0]
-            setAbout({ description: newDesc, bulletPoints: newBullets })
+            if (data?.getAbout?.length > 0) {
+                const { description: newDesc, bulletPoints: newBullets } =
+                    data.getAbout[0]
+                setAbout({ description: newDesc, bulletPoints: newBullets })
+            }
         },
         onError(error) {
             console.log(error)
