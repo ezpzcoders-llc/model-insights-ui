@@ -5,7 +5,7 @@ import { CONFIG } from '../utils/constants'
 const uri =
     process.env.NODE_ENV === 'development'
         ? 'http://localhost:5001'
-        : 'https://model-insights-server.herokuapp.com/' // update to current projects production endpoint
+        : 'https://model-insights-backend.herokuapp.com/' // update to current projects production endpoint
 const httpLink = new HttpLink({ uri })
 
 const authLink = setContext((_, { headers }) => {
