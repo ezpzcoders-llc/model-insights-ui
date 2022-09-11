@@ -54,37 +54,42 @@
         width: 100%;
         height: 100%;
 
-        .scrollIndicator {
-            color: var(--accent-text);
+        .scrollIconWrapper {
             position: absolute;
             bottom: 0.2rem;
-            left: 50%;
-            height: 5rem;
-            width: 5rem;
+            width: 100%;
             display: flex;
             justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            font-size: 1.2rem;
 
-            animation: bounce 0.5s;
-            animation-direction: alternate;
-            animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-            animation-iteration-count: 20;
+            .scrollIndicator {
+                height: 5rem;
+                width: 5rem;
+                cursor: pointer;
+                font-size: 1.2rem;
+                color: var(--accent-text);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
 
-            @keyframes bounce {
-                from {
-                    transform: translate3d(0, 0, 0);
+                svg {
+                    font-size: 2.2rem;
                 }
-                to {
-                    transform: translate3d(0, 10px, 0);
-                }
-            }
-            svg {
-                font-size: 2.2rem;
-            }
 
-            cursor: pointer;
+                @keyframes bounce {
+                    from {
+                        transform: translate3d(0, 0, 0);
+                    }
+                    to {
+                        transform: translate3d(0, 10px, 0);
+                    }
+                }
+
+                animation: bounce 0.5s;
+                animation-direction: alternate;
+                animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+                animation-iteration-count: 20;
+            }
         }
 
         .description {
@@ -109,12 +114,6 @@
         }
 
         @media screen and (max-width: 750px) {
-            .scrollIndicator {
-                bottom: 0%;
-                left: 50%;
-                transform: translate(-50%, 0%);
-            }
-
             .description {
                 position: absolute;
                 top: 45%;

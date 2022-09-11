@@ -65,11 +65,13 @@ const Landing = () => {
                     <h4>{data.description}</h4>
                     <BookNowButton />
                 </div>
-                <div
-                    onClick={about.scrollTo}
-                    className={styles.scrollIndicator}>
-                    Scroll
-                    <KeyboardArrowDown />
+                <div className={styles.scrollIconWrapper}>
+                    <div
+                        onClick={about.scrollTo}
+                        className={styles.scrollIndicator}>
+                        Scroll
+                        <KeyboardArrowDown />
+                    </div>
                 </div>
             </div>
         </section>
