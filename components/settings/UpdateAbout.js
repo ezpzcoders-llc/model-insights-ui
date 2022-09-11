@@ -126,14 +126,6 @@ const UpdateAbout = () => {
         }
     }
 
-    let isSubmitDisabled = false
-    if (
-        loading ||
-        (showNewDescription && !newDescription) ||
-        (showNewBullets && !newBullets)
-    )
-        isSubmitDisabled = true
-
     return (
         <section className={styles.UpdateAbout}>
             <p>Update the main message and bullet points here, then submit.</p>
@@ -153,17 +145,9 @@ const UpdateAbout = () => {
                                                 ? description.length + 1
                                                 : description.length
                                         }
-                                        disableIncrease={
-                                            description.length !==
-                                            showNewDescription
-                                                ? description.length + 1
-                                                : description.length
-                                        }
+                                        disableIncrease={showNewDescription}
                                         disableDecrease={
-                                            description.length ===
-                                            showNewDescription
-                                                ? description.length + 1
-                                                : description.length
+                                            description.length === 0
                                         }
                                         handleIncrease={() =>
                                             handleDescriptionCountChange('up')
@@ -200,6 +184,9 @@ const UpdateAbout = () => {
                                         handleDecrease={() =>
                                             handleBulletCountChange('down')
                                         }
+                                        disableDecrease={
+                                            bulletPoints.length === 0
+                                        }
                                     />
                                     bullets.
                                 </span>
@@ -213,7 +200,7 @@ const UpdateAbout = () => {
                         </div>
                     </div>
                     <FormButtons
-                        disabled={isSubmitDisabled}
+                        disabled={loading}
                         loading={loading}
                         onResetClick={resetForm}
                     />

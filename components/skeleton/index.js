@@ -7,7 +7,6 @@ const SkeletonWrapper = () => {
     return (
         <div className={skeleton}>
             <div className={topRow}>
-                <Skeleton variant="circular" height="3rem" width="3rem" />
                 <Skeleton variant="text" width="50%" height="3rem" />
                 <Skeleton variant="text" width="50%" height="3rem" />
             </div>

@@ -8,6 +8,14 @@ export const ADD_NEWSLETTER_PARTICIPANT = gql`
     }
 `
 
+export const ADD_SUBSCRIBER_TO_NEWSLETTER = gql`
+    mutation addSubscriberToNewsLetter($inviteeUri: String!) {
+        addSubscriberToNewsLetter(inviteeUri: $inviteeUri) {
+            id
+        }
+    }
+`
+
 export const UNSUBSCRIBE_USER = gql`
     mutation unsubscribeUser($email: String!) {
         unsubscribeUser(email: $email) {

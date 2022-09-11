@@ -21,10 +21,12 @@ const Landing = () => {
 
     useQuery(FETCH_LANDING_IMG, {
         onCompleted(data) {
-            setLanding({
-                image: `https://res.cloudinary.com/ezpzcoding-cloudinary/${data.getLanding[0]?.publicId}`,
-                description: data.getLanding[0]?.description
-            })
+            if (data.getLanding?.length > 0) {
+                setLanding({
+                    image: `https://res.cloudinary.com/ezpzcoding-cloudinary/${data.getLanding[0]?.publicId}`,
+                    description: data.getLanding[0]?.description
+                })
+            }
         },
         onError(error) {
             console.log(error)
